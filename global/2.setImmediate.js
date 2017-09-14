@@ -1,0 +1,15 @@
+//把参数函数放在下一个时间中执行
+setTimeout(function(){
+    console.log("12");
+},1000)
+//放在下个任务列表的头部
+setImmediate(function(){
+    console.log("setImmediate")
+})
+setTimeout(function(){
+    console.log("1212");
+},10)
+//放在当前页的尾部，一定会在当前页做完
+process.nextTick(function(){
+    console.log('nextTick');
+})
